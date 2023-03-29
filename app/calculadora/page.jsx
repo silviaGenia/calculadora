@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -19,14 +20,28 @@ const Item = styled(Paper)(({ theme }) => ({
 const color = red[50];
 
 export default function CalculadoraPage() {
+  const [value, setValue] = useState("");
+
+  const handleChange = (event) => {
+    const inputValue = event.target.value;
+    console.log(inputValue);
+    // Solo permitir números
+    const numericValue = inputValue.replace(/[^0-9]/g, "");
+    setValue(numericValue);
+  };
+
   return (
     <div className={styles.container}>
       <div className={`${styles.center} ${styles.mb}`}>
         <TextField
+          fullWidth
           id="outlined-basic"
           variant="outlined"
           className={styles.radius}
           sx={{ bgcolor: color }}
+          value={value}
+          onChange={handleChange}
+          inputProps={{ min: 0, step: 1 }} // Opcional: definir valores mínimos y pasos
         />
       </div>
       <div>
