@@ -1,0 +1,19 @@
+.container {
+  padding: 4rem 2rem;
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #e16752;
+  border-radius: 8%;
+}
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+.mb {
+  margin-bottom: 4rem;
+}
+/* .radius {
+  border-radius: 10%;
+  outline: none;
+} */
